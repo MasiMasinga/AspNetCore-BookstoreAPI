@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using BookstoreAPI.Data;
+using BookstoreAPI.Repositories;
+using BookstoreAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,13 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IBookstoreRepository, BookstoreRepository>();
+builder.Services.AddScoped<BookstoreService>();
+builder.Services.AddControllers();
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
