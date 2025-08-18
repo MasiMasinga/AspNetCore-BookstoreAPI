@@ -1,14 +1,15 @@
+using Microsoft.EntityFrameworkCore;
 using BookstoreAPI.Models;
 using BookstoreAPI.DTOs;
 using BookstoreAPI.Repositories;
 
-namespace BookstoreAPI.Services
+namespace BookstoreAPI.Repositories
 {
-    public class BookstoreService
+    public class BookstoreRepository : IBookstoreRepository
     {
         private readonly IBookstoreRepository _repository;
 
-        public BookstoreService(IBookstoreRepository repository)
+        public BookstoreRepository(IBookstoreRepository repository)
         {
             _repository = repository;
         }

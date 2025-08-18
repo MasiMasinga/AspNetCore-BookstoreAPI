@@ -4,7 +4,7 @@ using BookstoreAPI.Repositories;
 
 namespace BookstoreAPI.Services
 {
-    public class RecipeService
+    public class BookstoreService
     {
         private readonly IBookstoreRepository _repository;
 
@@ -17,15 +17,15 @@ namespace BookstoreAPI.Services
         {
         }
 
-        public async Task<Recipe?> GetBookByIdAsync(int id)
+        public async Task<Bookstore?> GetBookByIdAsync(int id)
         {
         }
 
-        public async Task<Recipe> CreateBookAsync(CreateBookstore dto)
+        public async Task<Bookstore> CreateBookAsync(CreateBookstoreDto dto)
         {
         }
 
-        public async Task<bool> UpdateBookAsync(int id, UpdateBookstore dto)
+        public async Task<bool> UpdateBookAsync(int id, UpdateBookstoreDto dto)
         {
         }
 
